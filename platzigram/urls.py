@@ -19,6 +19,9 @@ from platzigram import views
 from posts import views as posts_views
 
 urlpatterns = [
+
+    path('admin/', admin.site.urls),
+
     path('numeros/', views.numeros),
     path('edad/<str:nombre>/<int:edad>', views.edad),
 
