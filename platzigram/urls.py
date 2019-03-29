@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls.static import static
+from django.conf import settings
 from platzigram import views
 from posts import views as posts_views
 
@@ -25,5 +27,5 @@ urlpatterns = [
     path('numeros/', views.numeros),
     path('edad/<str:nombre>/<int:edad>', views.edad),
 
-    path('posts/', posts_views.list_posts)
-]
+    path('posts/', posts_views.list_posts),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
