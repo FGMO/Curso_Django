@@ -19,6 +19,7 @@ from django.conf.urls.static import static
 from django.conf import settings
 from platzigram import views
 from posts import views as posts_views
+from usuarios import views as user_views
 
 urlpatterns = [
 
@@ -27,5 +28,8 @@ urlpatterns = [
     path('numeros/', views.numeros),
     path('edad/<str:nombre>/<int:edad>', views.edad),
 
-    path('posts/', posts_views.list_posts),
+    path('posts/', posts_views.list_posts, name='post'),
+
+    path('usuarios/login/', user_views.login_view, name = 'login')
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
