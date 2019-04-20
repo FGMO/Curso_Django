@@ -30,6 +30,10 @@ urlpatterns = [
 
     path('posts/', posts_views.list_posts, name='post'),
 
-    path('usuarios/login/', user_views.login_view, name = 'login')
+    path('usuarios/login/', user_views.login_view, name = 'login'),
+    path('usuarios/logout/', user_views.logout_view, name = 'logout'),
+    path('usuarios/registro/', user_views.registro, name = 'registro'),
+    path('usuarios/actualizar/', user_views.actualizar, name = 'actualizar'),
+
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

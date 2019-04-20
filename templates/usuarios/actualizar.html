@@ -1,0 +1,10 @@
+{% extends "template.html" %}
+
+
+{% block head_content %}
+<title>{{ request.user.username }} | Actualizar perfil</title>
+{% endblock %}
+
+{% block container %}
+    <h1>{{ request.user.username }} </h1>
+{% endblock %}

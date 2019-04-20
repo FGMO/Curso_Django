@@ -1,0 +1,44 @@
+{% extends "usuarios/base.html" %}
+
+{% block head_content %}
+<title>Platzigram Registro</title>
+{% endblock %}
+
+{% block container %}
+
+    {%  if error %}
+        <p class="alert alert-danger">{{error}}</p>
+    {% endif %}
+
+<form action="{% url 'registro' %}" method="POST">
+    {% csrf_token %}
+
+    <div class="form-group">
+        <input class="form-control" type="text" placeholder="Usuario" name="usuario" required="true">
+    </div>
+
+    <div class="form-group">
+        <input class="form-control" type="text" placeholder="Nombre" name="nombre" required="true">
+    </div>
+
+    <div class="form-group">
+        <input class="form-control" type="text" placeholder="Apellido" name="apellido" required="true">
+    </div>
+
+    <div class="form-group">
+        <input class="form-control" type="email" placeholder="Correo electronico" name="correo" required="true">
+    </div>
+
+    <div class="form-group">
+        <input class="form-control" type="password" placeholder="Contraseña" name="clave" required="true">
+    </div>
+
+    <div class="form-group">
+        <input class="form-control" type="password" placeholder="Confirmar contraseña" name="confirma_clave"
+            required="true">
+    </div>
+
+    <button class="btn btn-primary btn-block mt-5" type="submit">Registrate</button>
+
+</form>
+{% endblock %}
